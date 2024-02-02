@@ -23,6 +23,16 @@
             }
     }
 },
+"timesUp":"Time's up",
+"away":"You have been away fior a while, budy.",
+"resumeAppError":"Error on resume app: {error}",
+"@resumeAppError":{
+    "placeholders": {
+        "error": {
+          "type": "String"
+        }
+    }
+},
 "takePicture":"Take a picture",
 "yes":"Yes",
 "no":"No"

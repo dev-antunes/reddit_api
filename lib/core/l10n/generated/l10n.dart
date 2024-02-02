@@ -220,6 +220,36 @@ class AppLocalizations {
     );
   }
 
+  /// `Time's up`
+  String get timesUp {
+    return Intl.message(
+      'Time\'s up',
+      name: 'timesUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have been away fior a while, budy.`
+  String get away {
+    return Intl.message(
+      'You have been away fior a while, budy.',
+      name: 'away',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error on resume app: {error}`
+  String resumeAppError(String error) {
+    return Intl.message(
+      'Error on resume app: $error',
+      name: 'resumeAppError',
+      desc: '',
+      args: [error],
+    );
+  }
+
   /// `Take a picture`
   String get takePicture {
     return Intl.message(

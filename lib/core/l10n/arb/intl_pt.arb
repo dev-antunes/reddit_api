@@ -23,6 +23,16 @@
             }
     }
 },
+"timesUp":"Acabou o tempo",
+"away":"Você ficou longe por um tempo, meu amigo.",
+"resumeAppError":"Erro ao iniciar o app: {error}",
+"@resumeAppError":{
+    "placeholders": {
+        "error": {
+          "type": "String"
+        }
+    }
+},
 "takePicture":"Tirar foto",
 "yes":"Sim",
 "no":"Não"

@@ -8,9 +8,9 @@ part 'api_data_model.g.dart';
 final class ApiDataModel {
   ApiDataModel({
     required this.author,
-    required this.numComments,
     required this.title,
     required this.ups,
+    required this.numComments,
     required this.created,
     required this.createdUtc,
   });

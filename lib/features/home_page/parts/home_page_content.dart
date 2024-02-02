@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:api_mock/core/l10n/generated/l10n.dart';
+import 'package:api_mock/core/theme/text_styles_data.dart';
 import 'package:api_mock/features/home_page/widgets/post_item_card.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,10 @@ class HomePageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(AppLocalizations.current.yourFeed),
+        Text(
+          AppLocalizations.current.yourFeed,
+          style: TextStyleData.title,
+        ),
         Expanded(
           child: ListView.separated(
             physics: const BouncingScrollPhysics(),
