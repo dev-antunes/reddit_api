@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomIconTheme extends IconThemeData {
-  static final IconThemeData primaryIconTheme = const IconThemeData(
+  static const IconThemeData primaryIconTheme = IconThemeData(
     size: 32.0,
     color: Colors.white,
   );
