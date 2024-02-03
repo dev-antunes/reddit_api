@@ -9,7 +9,7 @@ final class HivePostItemDatabase implements PostItemDatabase {
   @override
   Future<List<PostItem>> get() async {
     final itemBox = await _openBox();
-    return itemBox.values.toList().reversed.toList();
+    return itemBox.values.toList();
   }
 
   @override

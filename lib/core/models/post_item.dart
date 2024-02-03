@@ -6,7 +6,7 @@ class PostItem {
     required this.title,
     required this.author,
     required this.ups,
-    required this.commentsQuantity,
+    required this.numberOfComments,
     required this.createdAt,
     this.fromHive = false,
   });
@@ -14,7 +14,7 @@ class PostItem {
   final String title;
   final String author;
   final int ups;
-  final int commentsQuantity;
+  final int numberOfComments;
   final DateTime createdAt;
   final bool fromHive;
 
@@ -23,7 +23,7 @@ class PostItem {
     String? title,
     String? author,
     int? ups,
-    int? commentsQuantity,
+    int? numberOfComments,
     DateTime? createdAt,
     bool? fromHive,
   }) {
@@ -32,7 +32,7 @@ class PostItem {
       title: title ?? this.title,
       author: author ?? this.author,
       ups: ups ?? this.ups,
-      commentsQuantity: commentsQuantity ?? this.commentsQuantity,
+      numberOfComments: numberOfComments ?? this.numberOfComments,
       createdAt: createdAt ?? this.createdAt,
       fromHive: fromHive ?? this.fromHive,
     );

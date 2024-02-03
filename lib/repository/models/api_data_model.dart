@@ -31,7 +31,7 @@ final class ApiDataModel {
         title: title ?? '',
         author: author ?? '',
         ups: ups ?? 0,
-        commentsQuantity: numComments ?? 0,
+        numberOfComments: numComments ?? 0,
         createdAt: createdUtc != null
             ? DateTime.fromMillisecondsSinceEpoch(createdUtc!.toInt())
             : DateTime.now(),

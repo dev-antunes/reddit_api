@@ -29,6 +29,7 @@ class CreationForm extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Center(
               child: TextFormField(
+            initialValue: initialValue,
             decoration: InputDecoration(
               border: InputBorder.none,
               labelText: label,
@@ -37,7 +38,7 @@ class CreationForm extends StatelessWidget {
             controller: textCtrl,
             keyboardType: keyboardType,
             cursorHeight: 25,
-            style: TextStyle(fontSize: 17),
+            style: const TextStyle(fontSize: 15),
             textAlign: TextAlign.center,
             cursorColor: Colors.grey.shade200,
             onChanged: (value) => onChanged(value),

@@ -7,17 +7,10 @@ import 'package:api_mock/widgets/loading_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CreatingPage extends StatefulWidget {
-  const CreatingPage({super.key, this.item, this.isEdidtion = false});
+class CreatingPage extends StatelessWidget {
+  const CreatingPage(this.postItem, {super.key});
+  final PostItem? postItem;
 
-  final PostItem? item;
-  final bool isEdidtion;
-
-  @override
-  State<CreatingPage> createState() => _CreatingPageState();
-}
-
-class _CreatingPageState extends State<CreatingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +29,7 @@ class _CreatingPageState extends State<CreatingPage> {
               if (state is CreatingLoadingState) {
                 return const CustomLoadingSpinner();
               }
-              return CreatingContent(
-                item: widget.item,
-                isEdidtion: widget.isEdidtion,
-              );
+              return CreatingContent(postItem);
             },
           ),
         ),

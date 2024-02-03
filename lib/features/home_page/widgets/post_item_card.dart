@@ -57,7 +57,7 @@ class PostItemCard extends StatelessWidget {
                       children: [
                         ListItemTileInfo(
                           postInfo:
-                              AppUtils.formatNumber(postItem.commentsQuantity),
+                              AppUtils.formatNumber(postItem.numberOfComments),
                           icon: Icons.comment,
                           color: Colors.blue,
                         ),
@@ -103,7 +103,7 @@ class PostItemCard extends StatelessWidget {
             ],
           ),
         ),
-        if (isLastItem) const SizedBox(height: 70)
+        if (isLastItem) const SizedBox(height: 35)
       ],
     );
   }
@@ -120,7 +120,7 @@ Future<dynamic> _callEditiOrDeleteDialog(BuildContext context, PostItem item) =>
         TextButton(
           onPressed: () {
             Navigator.pop(context);
-            context.read<AppCubit>().navigatePage(1);
+            context.read<AppCubit>().navigatePage(1, postItem: item);
           },
           child: Text(AppLocalizations.current.edid),
         ),

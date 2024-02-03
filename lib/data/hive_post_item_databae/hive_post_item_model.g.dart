@@ -21,7 +21,7 @@ class PostItemHiveAdapter extends TypeAdapter<PostItemHive> {
       title: fields[1] as String,
       author: fields[2] as String,
       ups: fields[3] as int,
-      commentsQuantity: fields[4] as int,
+      numberOfComments: fields[4] as int,
       createdAt: fields[5] as DateTime,
       fromHive: fields[6] as dynamic,
     );
@@ -40,7 +40,7 @@ class PostItemHiveAdapter extends TypeAdapter<PostItemHive> {
       ..writeByte(3)
       ..write(obj.ups)
       ..writeByte(4)
-      ..write(obj.commentsQuantity)
+      ..write(obj.numberOfComments)
       ..writeByte(5)
       ..write(obj.createdAt)
       ..writeByte(6)

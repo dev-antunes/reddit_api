@@ -40,12 +40,12 @@ class _AppSkeletonState extends State<AppSkeleton> {
   }
 
   Widget _returnProperPage() {
-    final index = context.read<AppCubit>().state.index;
-    switch (index) {
+    final cubit = context.read<AppCubit>();
+    switch (cubit.state.index) {
       case 0:
         return const HomePage();
       case 1:
-        return const CreatingPage();
+        return CreatingPage(cubit.state.postItem);
       default:
         return const SettingsPage();
     }

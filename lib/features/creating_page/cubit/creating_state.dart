@@ -31,6 +31,6 @@ PostItem get _defaultPostItem => PostItem(
       title: '',
       author: '',
       ups: 0,
-      commentsQuantity: 0,
+      numberOfComments: 0,
       createdAt: DateTime.now(),
     );

@@ -10,7 +10,7 @@ final class PostItemHive extends PostItem with HiveObjectMixin {
     required super.title,
     required super.author,
     required super.ups,
-    required super.commentsQuantity,
+    required super.numberOfComments,
     required super.createdAt,
     super.fromHive,
   });
@@ -20,7 +20,7 @@ final class PostItemHive extends PostItem with HiveObjectMixin {
         title: post.title,
         author: post.author,
         ups: post.ups,
-        commentsQuantity: post.commentsQuantity,
+        numberOfComments: post.numberOfComments,
         createdAt: post.createdAt,
         fromHive: post.fromHive,
       );
@@ -42,7 +42,7 @@ final class PostItemHive extends PostItem with HiveObjectMixin {
 
   @override
   @HiveField(4)
-  int get commentsQuantity => super.commentsQuantity;
+  int get numberOfComments => super.numberOfComments;
 
   @override
   @HiveField(5)

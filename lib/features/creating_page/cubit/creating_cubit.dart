@@ -39,7 +39,8 @@ class CreatingCubit extends Cubit<CreatingState> {
   bool get validToProceed =>
       state.item.author.isNotEmpty && state.item.title.isNotEmpty;
 
-  void onChangeItem(PostItem item) => emit(CreatingInitialState(item: item));
+  void onEditionInitiation(PostItem? item) =>
+      emit(CreatingInitialState(item: item));
 
   void onChangeItemAuthor(String author) =>
       emit(CreatingInitialState(item: state.item.copyWith(author: author)));
@@ -53,5 +54,5 @@ class CreatingCubit extends Cubit<CreatingState> {
   void onChangeItemCommentNumber(String commentNum) =>
       emit(CreatingInitialState(
           item:
-              state.item.copyWith(commentsQuantity: int.tryParse(commentNum))));
+              state.item.copyWith(numberOfComments: int.tryParse(commentNum))));
 }

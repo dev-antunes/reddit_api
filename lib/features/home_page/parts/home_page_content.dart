@@ -25,14 +25,15 @@ class HomePageContent extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             physics: const BouncingScrollPhysics(),
-            separatorBuilder: (context, index) => const SizedBox(height: 22),
+            separatorBuilder: (context, index) => const SizedBox(height: 16),
             itemCount: state.posts.length,
             shrinkWrap: true,
             itemBuilder: (context, index) {
               final postItem = state.posts[index];
               return PostItemCard(
-                  postItem: postItem,
-                  isLastItem: state.posts.length == index + 1);
+                postItem: postItem,
+                isLastItem: state.posts.length == index + 1,
+              );
             },
           ),
         ),
