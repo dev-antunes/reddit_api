@@ -13,7 +13,7 @@ class InteractiveTimer extends StatefulWidget {
   const InteractiveTimer({
     super.key,
     required this.child,
-    this.maxInactivityTime = const Duration(hours: 20),
+    this.maxInactivityTime = const Duration(seconds: 20),
     required this.notificationService,
   });
 
