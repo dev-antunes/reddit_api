@@ -14,20 +14,20 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> onInit() async {
     try {
       emit(HomeLoadingState());
-      final result = await _getPosts();
+      final result = await _getItems();
       emit(HomeSuccessState(posts: result));
     } catch (exception) {
       emit(HomeErrorState(error: exception.toString()));
     }
   }
 
-  Future<List<PostItem>> _getPosts() async => _apiRepository.getAllPosts();
+  Future<List<PostItem>> _getItems() async => _apiRepository.getAllPosts();
 
   Future<void> delete(String id) async {
     try {
       emit(HomeLoadingState());
       await _apiRepository.delete(id);
-      final result = await _getPosts();
+      final result = await _getItems();
       emit(HomeSuccessState(posts: result));
     } catch (exception) {
       emit(HomeErrorState(posts: state.posts, error: exception.toString()));
