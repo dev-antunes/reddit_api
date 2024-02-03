@@ -18,7 +18,7 @@ class LanguageSection extends StatefulWidget {
 }
 
 class _LanguageSectionState extends State<LanguageSection> {
-  bool isEnglishSelected = false;
+  bool isEnglishSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,6 @@ class _LanguageSectionState extends State<LanguageSection> {
             ),
           ],
         ),
-        const SizedBox(height: 40),
       ],
     );
   }

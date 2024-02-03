@@ -29,8 +29,8 @@ class _CustomLoadingSpinnerState extends State<CustomLoadingSpinner>
         child: RotationTransition(
           turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
           child: Container(
-            width: 90.0,
-            height: 90.0,
+            width: 120.0,
+            height: 120.0,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey.shade700,
@@ -38,6 +38,7 @@ class _CustomLoadingSpinnerState extends State<CustomLoadingSpinner>
             child: const Center(
               child: Icon(
                 Icons.autorenew,
+                size: 30,
                 color: Colors.white,
               ),
             ),

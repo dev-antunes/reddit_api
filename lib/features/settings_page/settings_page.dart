@@ -13,13 +13,15 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 40),
+        SizedBox(height: pageHeight * 0.03),
         const LanguageSection(),
+        SizedBox(height: pageHeight * 0.03),
         SizedBox(
-          height: 200,
+          height: pageHeight * 0.35,
           width: 150,
           child: Card(
             child: BlocBuilder<SettingsCubit, SettingsState>(

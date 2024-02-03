@@ -39,11 +39,20 @@ class CameraSectionState extends State<CameraSection> {
     super.dispose();
   }
 
+  bool isLoading = false;
+
   Future<void> _capture() async {
-    final image = await _controller.takePicture();
-    if (!context.mounted) return;
-    context.read<SettingsCubit>().onTakingPicture(image);
-    Navigator.of(context).pop();
+    try {
+      setState(() => isLoading = true);
+      final image = await _controller.takePicture();
+      if (!context.mounted) return;
+      context.read<SettingsCubit>().onTakingPicture(image);
+      setState(() => isLoading = false);
+      Navigator.of(context).pop();
+    } catch (e) {
+      setState(() => isLoading = false);
+      throw Exception();
+    }
   }
 
   @override
@@ -51,28 +60,35 @@ class CameraSectionState extends State<CameraSection> {
     return FutureBuilder<void>(
       future: _futureCameraCtrl,
       builder: (context, snapshot) {
+        if (isLoading) {
+          return const Center(child: CustomLoadingSpinner());
+        }
         if (snapshot.connectionState == ConnectionState.done) {
-          return Column(
-            children: [
-              CameraPreview(_controller),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Center(
-                  child: FloatingActionButton(
-                    elevation: 12,
-                    onPressed: _capture,
-                    backgroundColor: AppColors.inactiveColor,
-                    child: const Icon(
-                      Icons.camera_alt,
-                      color: AppColors.primary,
+          return Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: Column(
+              children: [
+                SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.8,
+                    child: CameraPreview(_controller)),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Center(
+                    child: FloatingActionButton(
+                      elevation: 12,
+                      onPressed: _capture,
+                      backgroundColor: AppColors.inactiveColor,
+                      child: const Icon(
+                        Icons.camera_alt,
+                        color: AppColors.primary,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         }
-
         return const Center(child: CustomLoadingSpinner());
       },
     );
